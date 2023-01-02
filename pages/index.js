@@ -20,21 +20,21 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>Hello, I'm Fernando. I'm a Web Developer.</p>
-        <p>
+      <section className={"text-xl leading-6 "}>
+        <p className={"my-[20px] font-["}>Hello, I'm Fernando. I'm a Web Developer.</p>
+        <p className={"my-[20px] "}>
           (This is a sample website - you’ll be building a site like this in {' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+          <a className={"text-[#0070f3] no-underline hover:underline"} href="https://nextjs.org/learn">our Next.js tutorial</a>.)
         </p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
+      <section className={"text-xl leading-[1.5] pt-[1px]"}>
+        <h2 className={"font-bold text-2xl leading-[1.4] my-4"}>Blog</h2>
+        <ul className={" p-0 m-0 list-none"}>
           {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>{title}</Link>
+            <li className={"mb-[1.5rem] list-none text-gray-500 "} key={id}>
+              <Link className={"text-[#0070f3] no-underline hover:underline"} href={`/posts/${id}`}>{title}</Link>
               <br />
-              <small className={utilStyles.lightText}>
+              <small className={"text-gray-500 leading-6 "}>
                 <Date dateString={date} />
               </small>
             </li>

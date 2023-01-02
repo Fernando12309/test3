@@ -4,12 +4,12 @@ import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = 'Your Name';
+const name = 'Fernando Carvalho';
 export const siteTitle = 'Next.js Sample Website';
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className={"max-w-xl py-[1rem] mt-[3rem] mb-[5rem] mx-auto"}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -25,18 +25,18 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className={"flex flex-col items-center"}>
         {home ? (
           <>
             <Image
               priority
               src='/profile.jpg'
-              className={utilStyles.borderCircle}
+              className={"rounded-full"}
               height={144}
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
+            <h1 className={"text-4xl leading-[1.2] font-extrabold tracking-tighter my-[18px]"}>{name}</h1>
           </>
         ) : (
           <>
@@ -44,14 +44,14 @@ export default function Layout({ children, home }) {
               <Image
                 priority
                 src="/profile.jpg"
-                className={utilStyles.borderCircle}
+                className={"rounded-full"}
                 height={108}
                 width={108}
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
+            <h2 className={"text-[1.5rem] font-extrabold leading-[1.4] my-[1rem]"}>
+              <Link href="/" className={"text-inherit "}>
                 {name}
               </Link>
             </h2>
@@ -60,8 +60,8 @@ export default function Layout({ children, home }) {
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">← Back to home</Link>
+        <div className={"mt-[3rem]"}>
+          <Link className={"text-[#0070f3] text-[18px]  hover:underline"} href="/">← Back to home</Link>
         </div>
       )}
     </div>
